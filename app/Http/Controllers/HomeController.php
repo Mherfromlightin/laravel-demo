@@ -16,7 +16,7 @@ class HomeController extends Controller
                 'Armen',
                 'Karo',
             ];
-        return view('home', compact('$names'));
+        return view('home', compact('names'));
     }
 
     public function about()

@@ -11,7 +11,8 @@
 <ul>
     @foreach($names as $name)
 <li>
-<></li>
+    {{$name}}
+</li>
     @endforeach
 
 </ul>
