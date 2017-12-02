@@ -6,9 +6,17 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function home()
     {
-        return view('home');
+        $names =
+            [
+                'Mher',
+                'Hakob',
+                'Narek',
+                'Armen',
+                'Karo',
+            ];
+        return view('home', compact('$names'));
     }
 
     public function about()
