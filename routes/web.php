@@ -15,3 +15,5 @@ Route::get('/cars/{id}', 'CarsController@show');
 Route::get('/posts', 'PostsController@index');
 Route::get('/posts/{post}', 'PostsController@show');
 
+Route::get('/schools', 'SchoolsController@index');
+Route::get('/schools/{school}', 'SchoolsController@show');
