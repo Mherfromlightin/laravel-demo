@@ -10,7 +10,7 @@ class PostsController extends Controller
 
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::latest()->get();
 
         return view('posts.index', compact('posts'));
     }
@@ -22,6 +22,11 @@ class PostsController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'title' => 'required|string|min:5|max:15',
+            'text' => 'required|string|min:15|max:1000',
+        ]);
+
         Post::create($request->only(['title', 'text']));
 
         return redirect('/posts');
